@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,minimal-ui" />
 
-        <title>Tower Demo</title>
+        <title>Tower Game</title>
         <link rel="icon" type="image/x-icon" href="./assets/favicon.png" />
 
         <style>
@@ -411,6 +411,8 @@
                 soundOn: true,
                 setGameScore: function (s) {
                     score = s;
+                    console.log(score);
+                    window.parent.postMessage({type: 'score', value: score}, '*');
                 },
                 setGameSuccess: function (s) {
                     successCount = s;
